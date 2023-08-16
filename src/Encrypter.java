@@ -19,7 +19,7 @@ public class Encrypter
         System.out.print("Insert the key: ");
         key = scanner.nextInt();
 
-        //Pass the key through every letter
+        //Iterate through every letter of the open text
         for(int i = 0; i < openText.length(); i++)
         {
             //test if it's a letter
