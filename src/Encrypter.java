@@ -11,7 +11,7 @@ public class Encrypter
         Scanner scanner = new Scanner(System.in);
         int asciiCode;
 
-        //Get open text and convert to upper case
+        //Get open text
         System.out.print("Insert the text to be encrypted: ");
         openText = scanner.nextLine().toUpperCase();
 
@@ -19,28 +19,21 @@ public class Encrypter
         System.out.print("Insert the key: ");
         key = scanner.nextInt();
 
-        //Iterate through every letter of the open text
+        //Pass the key through every letter
         for(int i = 0; i < openText.length(); i++)
         {
-            //test if it's a letter
             if((int) openText.charAt(i) > 64 && (int) openText.charAt(i) < 91)
             {
-                //get ascii value
                 asciiCode = (int) openText.charAt(i);
                 asciiCode += key;
-
-                //test if the ascii code exceeds the z ascii value
                 if (asciiCode > 90)
                 {
-                    //go back to a ascii value
                     asciiCode -= 26;
                 }
                 encryptedText += (char) asciiCode;
             }
-            //test if isn't a letter
             else
             {
-                //don't encrypt if isn't a letter
                 encryptedText += openText.charAt(i);
             }
         }
